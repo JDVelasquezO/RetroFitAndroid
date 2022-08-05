@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_post"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".test">
+
+    <EditText
+            android:id="@+id/textDPIAssignment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="456"/>
+
+    <EditText
+            android:id="@+id/textCodeCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="774"/>
+
+    <Button
+            android:text="Asignar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/buttonAssign"/>
+
+    <TextView
+            android:id="@+id/tv_response"
+            android:layout_marginTop="35dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -15,6 +15,9 @@
             android:theme="@style/Theme.FrontIntermedias"
             android:usesCleartextTraffic="true">
         <activity
+                android:name=".Assignment"
+                android:exported="false"/>
+        <activity
                 android:name=".test"
                 android:exported="false"/>
         <activity

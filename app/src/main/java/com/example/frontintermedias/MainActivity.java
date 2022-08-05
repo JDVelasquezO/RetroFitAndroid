@@ -1,5 +1,8 @@
 package com.example.frontintermedias;
 
+import android.content.Context;
+import android.content.Intent;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -22,9 +25,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // addListenerOnButton();
-
+        Button register = (Button) findViewById(R.id.button3);
         superListView = findViewById(R.id.superListView);
+        final Context context = this;
+
         getSuperHeroes();
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, Assignment.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void getSuperHeroes() {
@@ -34,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<Results> call, Response<Results> response) {
                 Results res = response.body();
                 System.out.println(res);
+                assert res != null;
                 List<User> users = res.getUsers();
                 String[] nameUsers = new String[users.size()];
 
