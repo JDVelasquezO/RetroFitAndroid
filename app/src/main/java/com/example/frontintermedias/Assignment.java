@@ -40,8 +40,11 @@ public class Assignment extends AppCompatActivity {
         RetrofitClient.getInstance().getMyApi().postAssignment(assignment).enqueue(new Callback<Assign>() {
             @Override
             public void onResponse(Call<Assign> call, Response<Assign> response) {
-                assert response.body() != null;
-                Toast.makeText(getApplicationContext(), "Post desde api " + response.body().toString(), Toast.LENGTH_LONG).show();
+                if (response.body() != null) {
+                    Toast.makeText(getApplicationContext(), "Agregado Correctamente", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Error al asignar. Revisa tus datos", Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override
